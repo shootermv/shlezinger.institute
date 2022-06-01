@@ -81,7 +81,7 @@ const badgeStyle = {
 // data
 const links = [
   {
-    text: "Tutorial",
+    text: "Tutorialpppp",
     url: "https://www.gatsbyjs.com/docs/tutorial/",
     description:
       "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
@@ -131,12 +131,7 @@ const IndexPage = () => {
     <main style={pageStyles}>
       <title>Home Page</title>
       <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
+        Shlezinger Institute
       </h1>
       <p style={paragraphStyles}>
         Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
