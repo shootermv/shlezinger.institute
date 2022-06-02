@@ -1,25 +1,32 @@
 // Step 2: Define your component
 import * as React from "react";
 import Layout from "../components/layout";
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { graphql, Link } from 'gatsby'
-const ShopPage = ({data}) => {
-  const image = getImage(data.mdx.frontmatter.image)
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { graphql, Link } from "gatsby";
+const ShopPage = ({ data }) => {
+  //
   return (
     <Layout pageTitle="Shop">
       <main>
-        <p>
-          Hi there! I'm Shop Page
-        </p>
-        <GatsbyImage
+        <p>Hi there! I'm Shop Page</p>
+        {/*<GatsbyImage
            alt="Clifford, a reddish-brown pitbull, dozing in a bean bag chair"
            image={image}
-        />
-        {data.allMdx.nodes.map((node) => (
-          <article key={node.id}>
-            <div>{node.frontmatter.author} {node.frontmatter.title}</div>
-          </article>
-        ))}
+        />*/}
+        {data.allMdx.nodes.map((node) => {
+          const image = getImage(node.frontmatter.image);
+          return (
+            <article key={node.id}>
+              <GatsbyImage
+                alt="Clifford, a reddish-brown pitbull, dozing in a bean bag chair"
+                image={image}
+              />
+              <div>
+                {node.frontmatter.author} {node.frontmatter.title}
+              </div>
+            </article>
+          );
+        })}
       </main>
     </Layout>
   );
@@ -27,14 +34,14 @@ const ShopPage = ({data}) => {
 
 export const query = graphql`
   query {
-    allMdx(sort: {fields: frontmatter___date, order: DESC}, filter: {fileAbsolutePath: {regex: "/(shop-item)/"  }}) {
+    allMdx(filter: { fileAbsolutePath: { regex: "/(shop-items)/" } }) {
       nodes {
         frontmatter {
           title
           author
           image {
             childImageSharp {
-              gatsbyImageData
+              gatsbyImageData(height: 120)
             }
           }
         }
@@ -43,5 +50,5 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 export default ShopPage;
