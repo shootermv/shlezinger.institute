@@ -3,28 +3,26 @@ import * as React from "react";
 import Layout from "../components/layout";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, Link } from "gatsby";
+import { Card } from "antd";
+const { Meta } = Card;
 const ShopPage = ({ data }) => {
   //
   return (
-    <Layout pageTitle="Shop">
+    <Layout pageTitle="Buy our books!">
       <main>
-        <p>Hi there! I'm Shop Page</p>
-        {/*<GatsbyImage
-           alt="Clifford, a reddish-brown pitbull, dozing in a bean bag chair"
-           image={image}
-        />*/}
         {data.allMdx.nodes.map((node) => {
           const image = getImage(node.frontmatter.image);
           return (
-            <article key={node.id}>
-              <GatsbyImage
-                alt="Clifford, a reddish-brown pitbull, dozing in a bean bag chair"
-                image={image}
+            <Card key={node.id} hoverable style={{ width: 250 }}>
+              <div style={{textAlign: 'center', marginBottom: '20px'}}><GatsbyImage alt={node.frontmatter.title} image={image} /></div>
+              <Meta
+                style={{ marginBottom: '20px'}}
+                title={node.frontmatter.title}
+                description={node.frontmatter.description}
               />
-              <div>
-                {node.frontmatter.author} {node.frontmatter.title}
-              </div>
-            </article>
+              <div><b>{node.frontmatter.author}</b></div>
+              <div>{node.frontmatter.price}</div>
+            </Card>
           );
         })}
       </main>
@@ -39,6 +37,8 @@ export const query = graphql`
         frontmatter {
           title
           author
+          description
+          price
           image {
             childImageSharp {
               gatsbyImageData(height: 120)
