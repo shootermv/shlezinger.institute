@@ -87,9 +87,9 @@ const IndexPage = () => {
   return (
     <Layout pageTitle="Shlezinger Institute">
       <main style={pageStyles}>
-        <Button type="primary">Primary</Button>
+       
         <h3 style={paragraphStyles}>
-         Medicine And Jewish Law
+         Academic Rresearches For Medicine And Jewish Law
         </h3>
 
         <img
