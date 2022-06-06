@@ -6,14 +6,14 @@ const ArticlesPage = ({ data }) => {
   return (
     <Layout pageTitle="Articles">
       <main>
-      <ul>
+    
       {data.allMdx.nodes.map((node) => (
           <article key={node.id}>
             <h2> <Link to={`/article/${node.slug}`}>{node.frontmatter.title}</Link></h2>
             <div>{node.frontmatter.author} {node.frontmatter.date}</div>
           </article>
         ))}
-      </ul>
+    
       </main>
     </Layout>
   );

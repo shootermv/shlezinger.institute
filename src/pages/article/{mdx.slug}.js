@@ -4,7 +4,7 @@ import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 const Article = ({ data }) => {
   return (
-    <Layout pageTitle={`Articles / ${data.mdx.frontmatter.title}`}>
+    <Layout pageTitle={`${data.mdx.frontmatter.title}`}>
       <header style={{ display: 'flex' }}>{data.mdx.frontmatter.author} {data.mdx.frontmatter.date}</header>
       <MDXRenderer>{data.mdx.body}</MDXRenderer>
     </Layout>
