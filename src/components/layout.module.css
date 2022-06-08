@@ -3,7 +3,9 @@
   max-width: 900px;
   font-family: sans-serif;
 }
-
+.main { 
+  padding: 20px;
+}
 .heading {
   color: rebeccapurple;
 }
