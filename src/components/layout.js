@@ -15,7 +15,7 @@ const Layout = ({ pageTitle, children }) => {
   return (
     <div className={container}>
       <nav style={{marginBottom: '20px'}}>
-      <Menu mode="horizontal" selectedKeys={[url?.pathname?.replace('/', '')]}>
+      <Menu mode="horizontal" selectedKeys={[url?.pathname?.replace("/", "") || "home"]}>
         <Menu.Item key="home">
           <Link to="/">Home</Link>
         </Menu.Item>
