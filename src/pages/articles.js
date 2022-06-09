@@ -2,9 +2,9 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import { graphql, Link } from 'gatsby'
-const ArticlesPage = ({ data }) => {
+const ArticlesPage = ({ data, location }) => {
   return (
-    <Layout pageTitle="Articles">
+    <Layout pageTitle="Articles" location={location}>
       <main>
     
       {data.allMdx.nodes.map((node) => (

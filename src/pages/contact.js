@@ -14,13 +14,13 @@ const validateMessages = {
     range: "${label} must be between ${min} and ${max}",
   },
 };
-const ContactPage = () => {
+const ContactPage = ({location}) => {
   const onFinish = (values) => {
     console.log(values);
   };
 
   return (
-    <Layout pageTitle="Send us a message">
+    <Layout pageTitle="Send us a message"  location={location}>
       <Form
         layout="vertical"
         name="nest-messages"

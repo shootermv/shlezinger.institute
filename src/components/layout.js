@@ -9,16 +9,14 @@ import {
   navLinkText,
 } from "./layout.module.css";
 import { Menu } from "antd";
-const Layout = ({ pageTitle, children }) => {
-  const url = typeof window !== "undefined" ? window.location : "";
+const Layout = ({ pageTitle, children, location }) => {
 
-  console.log("url-", url?.pathname);
   return (
     <div className={container}>
       <nav style={{ marginBottom: "20px" }}>
         <Menu
           mode="horizontal"
-          selectedKeys={[url?.pathname?.replace("/", "") || "home"]}
+          selectedKeys={[location?.pathname?.replace("/", "") || "home"]}
         >
           <Menu.Item key="home">
             <Link to="/">Home</Link>

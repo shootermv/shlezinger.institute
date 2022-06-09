@@ -5,10 +5,10 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, Link } from "gatsby";
 import { Card, Button, Row, Col } from "antd";
 const { Meta } = Card;
-const ShopPage = ({ data }) => {
+const ShopPage = ({ data, location }) => {
   //
   return (
-    <Layout pageTitle="Buy our books!">
+    <Layout pageTitle="Buy our books!"  location={location}>
       <Row gutter={[32, 32]}>
         {data.allMdx.nodes.map((node) => {
           const image = getImage(node.frontmatter.image);

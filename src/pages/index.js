@@ -40,9 +40,9 @@ const links = [
 const { Title } = Typography;
 
 // markup
-const IndexPage = () => {
+const IndexPage = ({location}) => {
   return (
-    <Layout pageTitle="Shlezinger Institute">
+    <Layout pageTitle="Shlezinger Institute" location={location}>
       <main style={pageStyles}>
         <h3 style={paragraphStyles}>
           Academic Rresearches For Medicine And Jewish Law
