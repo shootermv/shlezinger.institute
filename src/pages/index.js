@@ -19,21 +19,21 @@ const links = [
     text: "Essays",
     url: "/articles",
     description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
+      "Collection of articles about Medical & Halachic topics.",
     color: "#1099A8",
   },
   {
     text: "Shop",
     url: "/shop",
     description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
+      "Buy our books and magazines.",
     color: "#BC027F",
   },
   {
     text: "About Us",
     url: "/about",
     description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
+      "Feel free to send us a questions.",
     color: "#BC027F",
   },
 ];
@@ -58,6 +58,7 @@ const IndexPage = () => {
             >
               <Card>
                 <Title level={2}>{link.text}</Title>
+                <p>{link.description}</p>
                 <Link to={link.url}><Button type="primary">More</Button></Link>
               </Card>
             </Col>
