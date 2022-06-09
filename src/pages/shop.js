@@ -13,7 +13,7 @@ const ShopPage = ({ data }) => {
         {data.allMdx.nodes.map((node) => {
           const image = getImage(node.frontmatter.image);
           return (
-            <Col xs={24}  lg={8} key={node.id}>
+            <Col xs={24} lg={8} key={node.id}>
               <Card key={node.id} hoverable style={{ minHeight: "380px" }}>
                 <div style={{ textAlign: "center", marginBottom: "20px" }}>
                   <GatsbyImage alt={node.frontmatter.title} image={image} />
