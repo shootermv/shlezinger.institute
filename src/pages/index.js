@@ -19,7 +19,7 @@ const paragraphStyles = {
 // data
 const links = [
   {
-    text: "Collection Of Articles",
+    text: "Essays",
     url: "https://www.gatsbyjs.com/docs/how-to/",
     description:
       "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
@@ -55,7 +55,9 @@ const IndexPage = () => {
         <Row gutter={[32, 32]}>
           
              {links.map((link, idx) => <Col xs={24} lg={8} key={`item-${idx}`} style={{textAlign: 'center'}}>
-                <Title level={2}>{link.text}</Title>  
+                <Card>
+                  <Title level={2}>{link.text}</Title> 
+                </Card> 
              </Col>)}
            
         </Row>
