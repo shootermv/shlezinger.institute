@@ -9,9 +9,8 @@ import {
   navLinkText,
 } from "./layout.module.css";
 import { Menu } from "antd";
-import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image";
 const Layout = ({ pageTitle, children, location }) => {
-
   return (
     <div className={container}>
       <nav style={{ marginBottom: "20px" }}>
@@ -19,15 +18,13 @@ const Layout = ({ pageTitle, children, location }) => {
           mode="horizontal"
           selectedKeys={[location?.pathname?.replace("/", "") || "home"]}
         >
-              
-      <StaticImage
-      src="../images/logo.png"
-      alt="A dinosaur"
-      placeholder="blurred"
-      layout="fixed"
-      width={50}
-      height={50}
-    />
+          <StaticImage
+            src="../images/logo.png"
+            alt="A dinosaur"
+            placeholder="blurred"
+            width={50}
+            height={50}
+          />
           <Menu.Item key="home">
             <Link to="/">Home</Link>
           </Menu.Item>
