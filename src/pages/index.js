@@ -45,7 +45,7 @@ const IndexPage = ({location}) => {
     <Layout pageTitle="Shlezinger Institute" location={location}>
       <main style={pageStyles}>
         <h3 style={paragraphStyles}>
-          Academic Rresearches For Medicine And Jewish Law
+          Academic Researches For Medicine And Jewish Law
         </h3>
 
         <Row gutter={[32, 32]}>
