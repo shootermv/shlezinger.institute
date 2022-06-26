@@ -8,9 +8,9 @@ import {
   navLinkItem,
   navLinkText,
 } from "./layout.module.css";
-import { Menu } from "antd";
+import { Breadcrumb, Menu } from "antd";
 import { StaticImage } from "gatsby-plugin-image";
-const Layout = ({ pageTitle, children, location }) => {
+const Layout = ({ pageTitle, children, location, hasBreadCrumbs = false }) => {
   return (
     <div className={container}>
       <nav style={{ marginBottom: "20px" }}>
@@ -43,6 +43,10 @@ const Layout = ({ pageTitle, children, location }) => {
         </Menu>
       </nav>
       <main className={main}>
+        {hasBreadCrumbs && <Breadcrumb separator=">">
+          <Breadcrumb.Item href="/articles">Articles</Breadcrumb.Item>
+          <Breadcrumb.Item href="">{`${pageTitle.slice(0, 12)}...`}</Breadcrumb.Item>
+        </Breadcrumb>}
         <h1 className={heading}>{pageTitle}</h1>
         {children}
       </main>
