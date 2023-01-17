@@ -10,7 +10,7 @@
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
-
+   - [live site](https://shlesinger.gatsbyjs.io)
     Use the Gatsby CLI to create a new site, specifying the minimal starter.
 
     ```shell
